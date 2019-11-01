@@ -1,0 +1,36 @@
+{
+  "name": "gatsby-theme-helpsy",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.17.7",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "gatsby": "^2.17.7",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "@material-ui/core": "^4.5.2",
+    "emotion-theming": "^10.0.19",
+    "gatsby-plugin-emotion": "^4.1.13",
+    "gatsby-plugin-material-ui": "^2.1.6",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-typescript": "^2.1.15",
+    "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-transformer-yaml": "^2.2.15",
+    "react-feather": "^2.0.3",
+    "react-helmet": "^5.2.1"
+  }
+}

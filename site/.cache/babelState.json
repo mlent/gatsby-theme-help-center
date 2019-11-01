@@ -1,0 +1,68 @@
+{
+  "stages": {
+    "develop": {
+      "plugins": [],
+      "presets": [
+        {
+          "name": "/opt/affilimate/help/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "develop-html": {
+      "plugins": [],
+      "presets": [
+        {
+          "name": "/opt/affilimate/help/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "build-html": {
+      "plugins": [],
+      "presets": [
+        {
+          "name": "/opt/affilimate/help/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "build-javascript": {
+      "plugins": [],
+      "presets": [
+        {
+          "name": "/opt/affilimate/help/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": []
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not dead"
+  ]
+}
