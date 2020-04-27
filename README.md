@@ -17,7 +17,11 @@ The most up-to-date docs on installing a Gatsby theme can be found [on the Gatsb
 but here's a summary using this theme as an example:
 
 ```bash
-yarn add gatsby-theme-help-center
+yarn add @mlent/gatsby-theme-help-center
+
+# or
+
+npm install --save @mlent/gatsby-theme-help-center
 ```
 
 Then edit your `gatsby-config.js` file:
@@ -26,7 +30,7 @@ Then edit your `gatsby-config.js` file:
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-theme-help-center',
+      resolve: '@mlent/gatsby-theme-help-center',
       options: {
         basePath: '/'
       }
@@ -45,7 +49,7 @@ You will want to customize all the site metadata:
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-theme-help-center',
+      resolve: '@mlent/gatsby-theme-help-center',
       options: {
         basePath: '/'
       }
