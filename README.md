@@ -9,6 +9,8 @@ This is a Gatsby theme for creating a simple Help Center. It supports:
 - Choosing featured articles
 - Choosing related articles for any post
 
+![Gatsby Help Center theme](gatsby-theme-help-center/static/images/social-sharing-default.png)
+
 ## Installation
 
 The most up-to-date docs on installing a Gatsby theme can be found [on the Gatsby website](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/),
