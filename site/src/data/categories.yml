@@ -1,24 +1,4 @@
-- name: Getting Started
+- name: Tutorials
   order: 1
-  slug: getting-started
-  description: Everything you need to know about getting started with our product.
-- name: Best practices
-  order: 2
-  slug: best-practices
-  description: How to use our product with best practices in mind.
-- name: FAQs
-  order: 3
-  slug: faqs
-  description: Frequently asked questions that're probably on your mind.
-- name: Account
-  order: 4
-  slug: account
-  description: Managing your account and billing information.
-- name: Troubleshooting
-  order: 5
-  slug: troubleshooting
-  description: Having issues? Check here for the solutions.
-- name: Community
-  order: 6
-  slug: community
-  description: Get help from our community.
+  slug: tutorials 
+  description: Tutorials are great
