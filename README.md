@@ -1,10 +1,12 @@
-![Gatsby Help Center theme](site/static/images/social-sharing-preview.png)
+This Gatsby theme is designed for creating a knowledge base or help center for your product.
+
+![Gatsby Help Center theme](https://gatbsy-theme-help-center.netlify.app/images/social-sharing-preview.png)
 
 You can see a demo here: https://gatbsy-theme-help-center.netlify.app
 
 # gatsby-theme-help-center :warning: WIP
 
-This is a Gatsby theme for creating a simple Help Center. It supports:
+## Features
 
 - **Categories** - Incl. images, titles, descriptions
 - **SEO and Sharing metadata** - Rich previews, social markdup, and SEO metadata
