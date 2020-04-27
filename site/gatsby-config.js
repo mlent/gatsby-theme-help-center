@@ -9,7 +9,7 @@ module.exports = {
     logoLabel: "Help Center",
     searchText: "Search",
     faviconUrl: "/images/favicon.png",
-    socialSharingImageUrl: "/images/social-sharing-default.png",
+    socialSharingImageUrl: "/images/social-sharing-preview.png",
     twitter: "@monicalent",
     facebookUrl: "https://www.facebook.com/yourpage",
     ctaButtonText: "Open on GitHub",
