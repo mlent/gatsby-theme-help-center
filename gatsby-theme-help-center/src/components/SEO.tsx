@@ -113,14 +113,14 @@ export const SEO = ({
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       <link rel="shortcut icon" href={faviconUrl} />
       <link rel="canonical" href={seo.url} />
-      {googleTagManagerId && googleAnalyticsMeasurementId && (
-        <>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${googleTagManagerId}`}
-          />
-          <script>{injectGoogleAnalytics(googleAnalyticsMeasurementId)}</script>
-        </>
+      {googleTagManagerId && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleTagManagerId}`}
+        />
+      )}
+      {googleAnalyticsMeasurementId && (
+        <script>{injectGoogleAnalytics(googleAnalyticsMeasurementId)}</script>
       )}
     </Helmet>
   );
