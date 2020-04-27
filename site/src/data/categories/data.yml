@@ -1,12 +1,12 @@
 - name: Get Started
   slug: getting-started
-  description: Write helpful content about how to start using your product.
+  description: How to start using this Gatsby theme for your product's help center
   image: /images/getting-started.svg
 - name: FAQs
   slug: faqs
-  description: Frequently asked questions that your user email you about.
+  description: Frequently asked questions about this theme (according to projections)
   image: /images/faqs.svg
 - name: Tutorials
   slug: tutorials
-  description: Step-by-step guides for using various features in your app.
+  description: Step-by-step guides for customizing bits of this theme
   image: /images/tutorials.svg

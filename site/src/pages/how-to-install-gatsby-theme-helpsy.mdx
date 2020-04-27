@@ -1,12 +1,36 @@
 ---
-title: How to install the Gatsby theme Helpsy
+title: How to install this Gatsby theme
 description: How to install this Gatsby theme and how to supply the needed data for it
 author: Monica
-categories: ["tutorials"]
+categories: ["getting-started"]
 date: 2020-03-15
 featured: true
 tags: []
 relatedArticles: ['how-to-install-gatsby-theme-helpsy']
 ---
 
-Lalala
+The most up-to-date docs on installing a Gatsby theme can be found [on the Gatsby website](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/),
+but here's a summary using this theme as an example:
+
+```bash
+yarn add @mlent/gatsby-theme-help-center
+
+# or
+
+npm install --save @mlent/gatsby-theme-help-center
+```
+
+Then edit your `gatsby-config.js` file:
+
+```javascript
+module.exports = {
+  plugins: [
+    {
+      resolve: '@mlent/gatsby-theme-help-center',
+      options: {
+        basePath: '/'
+      }
+    }
+  ]
+};
+```
