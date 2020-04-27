@@ -2,6 +2,7 @@ import { createMuiTheme } from "@material-ui/core";
 
 let theme = createMuiTheme({
   typography: {
+    fontFamily: "Lato, sans-serif",
     h5: {
       fontWeight: 500,
       fontSize: 26,

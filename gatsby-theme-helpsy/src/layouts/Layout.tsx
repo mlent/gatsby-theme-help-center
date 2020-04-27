@@ -6,15 +6,19 @@ import Navigation from "../components/Navigation";
 
 const Wrapper = styled("div")`
   max-width: 800px;
-  margin: 0 auto;
+  margin: ${p => p.theme.spacing(6)}px auto;
+
+  @media (max-width: 800px) {
+    margin: ${p => p.theme.spacing(10)}px auto;
+  }
 `;
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ style?: any }> = ({ children, style }) => {
   return (
     <>
       <Stripe />
       <Navigation />
-      <Wrapper>{children}</Wrapper>
+      <Wrapper style={style}>{children}</Wrapper>
     </>
   );
 };

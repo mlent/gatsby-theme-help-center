@@ -3,4 +3,8 @@ export type SiteMetadata = {
   description: string;
   siteUrl: string;
   logoUrl: string;
+  ctaButtonText: string;
+  ctaButtonUrl: string;
+  loginLinkText: string;
+  loginLinkUrl: string;
 };

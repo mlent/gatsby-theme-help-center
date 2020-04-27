@@ -3,4 +3,5 @@ export type Category = {
   name: string;
   url: string;
   description: string;
+  image: string;
 };
