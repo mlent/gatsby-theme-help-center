@@ -68,6 +68,12 @@ module.exports = {
     // Logo that appears in the top left corner
     logoUrl: '/images/logo.png',
 
+    // Text that appears next to the logo
+    logoLabel: 'Help Center',
+
+    // Placeholder for search input field
+    searchText: 'Search',
+
     // Your favicon 
     faviconUrl: '/images/favicon.png',
 

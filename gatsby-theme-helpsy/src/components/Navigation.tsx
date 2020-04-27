@@ -80,6 +80,8 @@ const Navigation = () => {
           ctaButtonText
           linkUrl
           linkText
+          searchText
+          logoLabel
         }
       }
       allMdx {
@@ -103,6 +105,8 @@ const Navigation = () => {
     title,
     siteUrl,
     logoUrl,
+    logoLabel,
+    searchText,
     ctaButtonUrl,
     ctaButtonText,
     linkUrl,
@@ -135,7 +139,7 @@ const Navigation = () => {
               title={title}
               alt={title}
             />
-            <div style={{ marginLeft: '12px' }}>Help Center</div>
+            <div style={{ marginLeft: '12px' }}>{logoLabel}</div>
           </Link>
         </div>
         <div style={{ textAlign: 'center', gridArea: 'center' }}>
@@ -154,7 +158,7 @@ const Navigation = () => {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Search"
+                label={searchText}
                 variant="outlined"
                 InputLabelProps={{
                   classes: {

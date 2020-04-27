@@ -18,4 +18,6 @@ export type SiteMetadata = {
   footerText: string;
   googleTagManagerId: string;
   googleAnalyticsMeasurementId: string;
+  searchText: string;
+  logoLabel: string;
 };
