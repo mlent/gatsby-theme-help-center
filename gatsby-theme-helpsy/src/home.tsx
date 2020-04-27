@@ -1,13 +1,13 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Category } from "./types/Category";
-import { SiteMetadata } from "./types/SiteMetadata";
-import { MdxArticle } from "./types/Article";
-import styled from "./styled";
-import Layout from "./layouts/Layout";
-import CategoryList from "./components/CategoryList";
-import FeaturedArticles from "./components/FeaturedArticles";
-import { SEO } from "./components/SEO";
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Category } from './types/Category';
+import { SiteMetadata } from './types/SiteMetadata';
+import { MdxArticle } from './types/Article';
+import styled from './styled';
+import Layout from './layouts/Layout';
+import CategoryList from './components/CategoryList';
+import FeaturedArticles from './components/FeaturedArticles';
+import { SEO } from './components/SEO';
 
 type Data = {
   allCategory: {
@@ -23,23 +23,23 @@ type Data = {
   };
 };
 
-const Title = styled("div")`
+const Title = styled('div')`
   text-align: center;
   color: white;
   font-size: 1.5em;
   margin-bototm: 0;
 `;
 
-const Footer = styled("footer")`
+const Footer = styled('footer')`
   text-align: center;
-  margin: ${p => p.theme.spacing(6)}px auto;
+  margin: ${(p) => p.theme.spacing(6)}px auto;
 
   a {
     border-bottom: 2px solid black;
   }
 `;
 
-export default function() {
+export default function () {
   const data: Data = useStaticQuery(graphql`
     query {
       site {
@@ -47,6 +47,9 @@ export default function() {
           title
           siteUrl
           description
+          headline
+          footerText
+          footerUrl
         }
       }
       allCategory(sort: { fields: order, order: ASC }) {
@@ -79,23 +82,23 @@ export default function() {
   const categories = data.allCategory.nodes;
   const siteMetadata = data.site.siteMetadata;
   const featuredArticles = data.allMdx.edges.map(
-    edge => edge.node
+    (edge) => edge.node
   ) as MdxArticle[];
 
   return (
-    <Layout style={{ maxWidth: "950px" }}>
+    <Layout styles={{ maxWidth: 950 }}>
       <SEO
         title={siteMetadata.title}
         description={siteMetadata.description}
         siteUrl={siteMetadata.siteUrl}
       />
       <Title>
-        <h1>How can we be helpful?</h1>
+        <h1>{siteMetadata.headline}</h1>
       </Title>
       <FeaturedArticles articles={featuredArticles} />
       <CategoryList categories={categories} />
       <Footer>
-        <a href="https://affilimate.io">Back to Affilimate main website</a>
+        <a href={siteMetadata.footerUrl}>{siteMetadata.footerText}</a>
       </Footer>
     </Layout>
   );

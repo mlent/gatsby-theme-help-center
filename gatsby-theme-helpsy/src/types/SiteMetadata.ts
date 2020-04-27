@@ -7,4 +7,7 @@ export type SiteMetadata = {
   ctaButtonUrl: string;
   loginLinkText: string;
   loginLinkUrl: string;
+  headline: string;
+  footerUrl: string;
+  footerText: string;
 };
