@@ -57,10 +57,10 @@ module.exports = {
   ],
   siteMetadata: {
     // Fallback title in case a title is not defined for the page
-    title: 'Helpsy Theme',
+    title: 'Gatsby Help Center Theme',
 
     // Aside from the home page, this template will be used for all category/article pages
-    titleTemplate: '%s · Helpsy Theme',
+    titleTemplate: '%s · Gatsby Help Center Theme',
 
     // Meta description
     description: 'A help center theme for Gatsby.',
@@ -69,7 +69,7 @@ module.exports = {
     siteUrl: 'https://gatbsy-theme-helpsy.netlify.app',
 
     // Use for the og:site_name property
-    siteName: 'Helpsy Theme · A Help Center Theme for Gatsby',
+    siteName: 'A Help Center Theme for Gatsby',
 
     // Logo that appears in the top left corner
     logoUrl: '/images/logo.png',
@@ -90,15 +90,15 @@ module.exports = {
     twitter: '@monicalent',
 
     // Your product's Facebook page
-    facebookUrl: 'https://www.facebook.com',
+    facebookUrl: 'https://www.facebook.com/yourpage',
 
     // Text/url for main call-to-action button
     ctaButtonText: 'Open on GitHub',
-    ctaButtonUrl: 'https://github.com/mlent/helpsy',
+    ctaButtonUrl: 'https://github.com/mlent/gatsby-theme-help-center',
 
     // Text/url for secondary link next to call-to-action button
     linkText: 'See demo',
-    linkUrl: 'https://mlent.github.io/helpsy',
+    linkUrl: 'https://gatbsy-theme-help-center.netlify.app/',
 
     // Main headline
     headline: 'How can we be helpful?',
