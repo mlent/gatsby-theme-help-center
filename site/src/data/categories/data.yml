@@ -1,0 +1,12 @@
+- name: Get Started
+  slug: getting-started
+  description: Write helpful content about how to start using your product.
+  image: /images/getting-started.svg
+- name: FAQs
+  slug: faqs
+  description: Frequently asked questions that your user email you about.
+  image: /images/faqs.svg
+- name: Tutorials
+  slug: tutorials
+  description: Step-by-step guides for using various features in your app.
+  image: /images/tutorials.svg
