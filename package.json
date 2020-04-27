@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "build": "yarn && yarn workspace gatsby-theme-helpsy build"
+    "build": "yarn && yarn workspace gatsby-theme-help-center build"
   },
   "workspaces": [
-    "gatsby-theme-helpsy",
+    "gatsby-theme-help-center",
     "site"
   ]
 }
