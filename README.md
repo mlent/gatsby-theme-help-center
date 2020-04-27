@@ -4,12 +4,12 @@
 
 This is a Gatsby theme for creating a simple Help Center. It supports:
 
-- Creating your own categories (incl. images, slugs, titles, descriptions)
-- A bunch of SEO metadata
-- Writing articles with MDX
-- Customizing the logo, button, link, and a few colors
-- Choosing featured articles
-- Choosing related articles for any post
+- **Categories** - Incl. images, titles, descriptions
+- **SEO and Sharing metadata** - Rich previews, social markdup, and SEO metadata
+- **MDX** - For writing the articles
+- **Customization** - Logo, links, colors, and a few terms
+- **Featured articles** - Shown on the home page
+- **Related articles** - Which display at the bottom of other articles
 
 ## Installation
 
@@ -103,7 +103,7 @@ module.exports = {
     footerText: 'Back to main website',
     footerUrl: 'https://monicalent.com',
 
-    // Google Analytics setup
+    // Google Analytics setup (Optional)
     googleTagManagerId: '',
     googleAnalyticsMeasurementId: '',
   }
