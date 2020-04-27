@@ -1,4 +1,6 @@
-![Gatsby Help Center theme](gatsby-theme-help-center/static/images/social-sharing-default.png)
+![Gatsby Help Center theme](site/static/images/social-sharing-preview.png)
+
+You can see a demo here: https://gatbsy-theme-help-center.netlify.app
 
 # gatsby-theme-help-center :warning: WIP
 
