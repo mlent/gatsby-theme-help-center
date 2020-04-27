@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-transformer-yaml',
-      options: { typeName: 'Category' },
+      options: { typeName: 'Category', path: 'src/data/categeories' },
     },
     {
       resolve: 'gatsby-plugin-material-ui',

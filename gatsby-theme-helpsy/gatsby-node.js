@@ -1,16 +1,16 @@
-const fs = require("fs");
-const path = require("path");
-const { createFilePath } = require("gatsby-source-filesystem");
+const fs = require('fs');
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 const DEFAULT_OPTIONS = {
-  basePath: "/",
+  basePath: '/',
 };
 
 // Enable resolving imports for mdx
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
 };
@@ -20,8 +20,8 @@ exports.onPreBootstrap = ({ store, reporter }) => {
   const { program } = store.getState();
 
   const contentPaths = [
-    path.join(program.directory, "src/data"),
-    path.join(program.directory, "src/pages"),
+    path.join(program.directory, 'src/data/categories'),
+    path.join(program.directory, 'src/pages'),
   ];
 
   contentPaths.forEach((dir) => {
@@ -35,12 +35,12 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === "Mdx") {
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
     const articleSlug = `/articles${value}`;
 
     createNodeField({
-      name: "slug",
+      name: 'slug',
       node,
       value: articleSlug,
     });
@@ -80,7 +80,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   // Create the index page
   createPage({
     path: basePath,
-    component: require.resolve("./src/home.tsx"),
+    component: require.resolve('./src/home.tsx'),
   });
 
   const result = await graphql(`
@@ -108,7 +108,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   `);
 
   if (result.errors) {
-    reporter.panic("Error loading data to create pages", result.errors);
+    reporter.panic('Error loading data to create pages', result.errors);
     return;
   }
 
@@ -121,7 +121,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
     createPage({
       path: `${basePath}categories/${slug}`,
-      component: require.resolve("./src/templates/category.tsx"),
+      component: require.resolve('./src/templates/category.tsx'),
       context: {
         categoryId: id,
       },
@@ -130,11 +130,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
 
   // Create pages for each help center article
   articles.forEach(({ node }) => {
-    console.log({ path: node.fields.slug, id: node.id });
-
     createPage({
       path: node.fields.slug,
-      component: require.resolve("./src/templates/article.tsx"),
+      component: require.resolve('./src/templates/article.tsx'),
       context: {
         articleId: node.id,
       },
