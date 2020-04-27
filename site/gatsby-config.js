@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/helpsy',
   siteMetadata: {
     title: 'Helpsy Theme',
     titleTemplate: '%s · Helpsy Theme',
