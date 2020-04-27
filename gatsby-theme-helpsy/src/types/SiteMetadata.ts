@@ -1,13 +1,21 @@
 export type SiteMetadata = {
   title: string;
+  titleTemplate: string;
   description: string;
   siteUrl: string;
+  siteName: string;
+  faviconUrl: string;
+  twitter: string;
+  facebookUrl: string;
   logoUrl: string;
+  socialSharingImageUrl: string;
   ctaButtonText: string;
   ctaButtonUrl: string;
-  loginLinkText: string;
-  loginLinkUrl: string;
+  linkText: string;
+  linkUrl: string;
   headline: string;
   footerUrl: string;
   footerText: string;
+  googleTagManagerId: string;
+  googleAnalyticsMeasurementId: string;
 };

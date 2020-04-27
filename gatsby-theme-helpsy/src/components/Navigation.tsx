@@ -1,11 +1,11 @@
-import React from "react";
-import { Link, navigate, graphql, useStaticQuery } from "gatsby";
-import { TextField, Button } from "@material-ui/core";
-import { Autocomplete } from "@material-ui/lab";
-import { SiteMetadata } from "../types/SiteMetadata";
-import { MdxArticle } from "../types/Article";
-import styled, { css } from "../styled";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import React from 'react';
+import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
+import { TextField, Button } from '@material-ui/core';
+import { Autocomplete } from '@material-ui/lab';
+import { SiteMetadata } from '../types/SiteMetadata';
+import { MdxArticle } from '../types/Article';
+import styled, { css } from '../styled';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 type Data = {
   allMdx: {
@@ -18,34 +18,34 @@ type Data = {
   };
 };
 
-const NavBarInner = styled("div")`
+const NavBarInner = styled('div')`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas: "left center right";
+  grid-template-areas: 'left center right';
   align-items: center;
   height: 60px;
   color: #fff;
   transition: 0.7s;
-  padding: ${p => p.theme.spacing(4)}px ${p => p.theme.spacing(4)}px;
+  padding: ${(p) => p.theme.spacing(4)}px ${(p) => p.theme.spacing(4)}px;
 
   a {
     transition: none;
   }
 
   @media (max-width: 800px) {
-    padding: 0 ${p => p.theme.spacing(1)}px;
+    padding: 0 ${(p) => p.theme.spacing(1)}px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "left right"
-      "center center";
+      'left right'
+      'center center';
 
     & > div {
-      padding-top: ${p => p.theme.spacing(2)}px;
+      padding-top: ${(p) => p.theme.spacing(2)}px;
     }
   }
 `;
 
-const RightColumn = styled("div")`
+const RightColumn = styled('div')`
   text-align: right;
 
   @media (max-width: 800px) {
@@ -78,8 +78,8 @@ const Navigation = () => {
           logoUrl
           ctaButtonUrl
           ctaButtonText
-          loginLinkUrl
-          loginLinkText
+          linkUrl
+          linkText
         }
       }
       allMdx {
@@ -105,40 +105,40 @@ const Navigation = () => {
     logoUrl,
     ctaButtonUrl,
     ctaButtonText,
-    loginLinkUrl,
-    loginLinkText
+    linkUrl,
+    linkText,
   } = data.site.siteMetadata;
 
   const {
-    allMdx: { edges }
+    allMdx: { edges },
   } = data;
 
   const searchOptions: AutocompleteOption[] = edges
-    .map(e => ({
+    .map((e) => ({
       slug: e.node.fields.slug,
-      title: e.node.frontmatter.title
+      title: e.node.frontmatter.title,
     }))
     .sort((a, b) => -b.title.localeCompare(a.title));
 
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   return (
-    <div style={{ zIndex: 100, width: "100%" }}>
+    <div style={{ zIndex: 100, width: '100%' }}>
       <NavBarInner>
         <div
-          style={{ gridArea: "left", display: "flex", alignItems: "center" }}
+          style={{ gridArea: 'left', display: 'flex', alignItems: 'center' }}
         >
-          <Link to={siteUrl} style={{ display: "flex", alignItems: "center" }}>
+          <Link to={siteUrl} style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src={logoUrl}
-              height={isMobile ? "20px" : "30px"}
+              height={isMobile ? '20px' : '30px'}
               title={title}
               alt={title}
             />
-            <div style={{ marginLeft: "12px" }}>Help Center</div>
+            <div style={{ marginLeft: '12px' }}>Help Center</div>
           </Link>
         </div>
-        <div style={{ textAlign: "center", gridArea: "center" }}>
+        <div style={{ textAlign: 'center', gridArea: 'center' }}>
           <Autocomplete
             options={searchOptions}
             getOptionLabel={(option: AutocompleteOption) => option.title}
@@ -148,10 +148,10 @@ const Navigation = () => {
             classes={{
               paper: css(() => ({
                 boxShadow:
-                  "0px 1px 5px 1px rgba(0,0,0,0.05), 2px 5px 9px 2px rgba(0,0,0,0.01)"
-              }))
+                  '0px 1px 5px 1px rgba(0,0,0,0.05), 2px 5px 9px 2px rgba(0,0,0,0.01)',
+              })),
             }}
-            renderInput={params => (
+            renderInput={(params) => (
               <TextField
                 {...params}
                 label="Search"
@@ -159,40 +159,40 @@ const Navigation = () => {
                 InputLabelProps={{
                   classes: {
                     focused: css(() => ({
-                      color: "white !important"
+                      color: 'white !important',
                     })),
                     root: css(() => ({
-                      color: "white"
-                    }))
-                  }
+                      color: 'white',
+                    })),
+                  },
                 }}
                 classes={{
                   root: css(() => ({
                     input: {
-                      color: "white"
+                      color: 'white',
                     },
                     fieldset: {
-                      borderColor: "white"
+                      borderColor: 'white',
                     },
-                    button: { color: "white" }
-                  }))
+                    button: { color: 'white' },
+                  })),
                 }}
                 fullWidth
               />
             )}
           />
         </div>
-        <RightColumn style={{ gridArea: "right" }}>
+        <RightColumn style={{ gridArea: 'right' }}>
           <a
-            href={loginLinkUrl}
+            href={linkUrl}
             target="_blank"
             rel="noopener"
-            style={{ display: "inline-block", marginRight: "12px" }}
+            style={{ display: 'inline-block', marginRight: '12px' }}
           >
-            {loginLinkText}
+            {linkText}
           </a>
           <a href={ctaButtonUrl} target="_blank" rel="noopener">
-            <CtaButton variant="contained" size={isMobile ? "small" : "medium"}>
+            <CtaButton variant="contained" size={isMobile ? 'small' : 'medium'}>
               {ctaButtonText}
             </CtaButton>
           </a>

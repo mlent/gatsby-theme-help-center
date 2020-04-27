@@ -1,5 +1,13 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { graphql, useStaticQuery } from 'gatsby';
+import { SiteMetadata } from '../types/SiteMetadata';
+
+type Data = {
+  site: {
+    siteMetadata: SiteMetadata;
+  };
+};
 
 const injectGoogleAnalytics = (measurementId: string) => `
   window.dataLayer = window.dataLayer || [];
@@ -17,7 +25,6 @@ export const SEO = ({
   pathname,
   isArticle = false,
   publishedDate,
-  googleAnalytics = "UA-134992074-3"
 }: {
   title?: string;
   description?: string;
@@ -27,28 +34,54 @@ export const SEO = ({
   pathname?: string;
   isArticle?: boolean;
   publishedDate?: string;
-  googleAnalytics?: string;
 }) => {
-  const defaultTitle =
-    "Affiliate marketing analytics tool for bloggers · Affilimate";
-  const defeaultDescription =
-    "Get help for your most common questions about Affilimate, the affiliate analytics and optimization tool for professional bloggers.";
-  const titleTemplate = "%s · Affilimate Help Center";
-  const twitterUsername = "affilimateio";
-  const defaultImage = "/images/social-image.jpg";
-  const img = socialSharingImage || image || defaultImage;
+  const data: Data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+          siteName
+          faviconUrl
+          facebookUrl
+          socialSharingImageUrl
+          titleTemplate
+          twitter
+          googleTagManagerId
+          googleAnalyticsMeasurementId
+        }
+      }
+    }
+  `);
+
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    siteUrl: defaultUrl,
+    titleTemplate,
+    faviconUrl,
+    facebookUrl,
+    socialSharingImageUrl: defaultSocialSharingImageUrl,
+    googleTagManagerId,
+    googleAnalyticsMeasurementId,
+    twitter,
+    siteName,
+  } = data.site.siteMetadata;
+
+  const img = socialSharingImage || image || defaultSocialSharingImageUrl;
 
   const seo = {
     title: title || defaultTitle,
-    description: description || defeaultDescription,
+    description: description || defaultDescription,
     image: `${siteUrl}${img}`,
-    url: `${siteUrl}${pathname || "/"}`
+    url: `${siteUrl || defaultUrl}${pathname || '/'}`,
   };
 
   return (
     <Helmet
       title={seo.title}
-      titleTemplate={seo.title !== defaultTitle ? titleTemplate : "%s"}
+      titleTemplate={seo.title !== defaultTitle ? titleTemplate : '%s'}
     >
       <meta charSet="utf-8" />
       <meta name="description" content={seo.description} />
@@ -57,25 +90,10 @@ export const SEO = ({
         href="https://fonts.googleapis.com/css?family=Lato&display=swap"
         rel="stylesheet"
       />
-      <meta name="p:domain_verify" content="7bd87f7fc3b2b4522c006a4b24ac9866" />
-      <meta
-        property="og:site_name"
-        content="Affilimate · Affiliate marketing analytics tool for bloggers"
-      />
+      <meta property="og:site_name" content={siteName} />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {isArticle && <meta property="og:type" content="article" />}
-      {isArticle && (
-        <meta
-          property="article:author"
-          content="https://www.facebook.com/affilimate/"
-        />
-      )}
-      {isArticle && (
-        <meta
-          property="article:author"
-          content="https://www.facebook.com/affilimate/"
-        />
-      )}
+      {isArticle && <meta property="article:author" content={facebookUrl} />}
       {isArticle && (
         <meta property="article:published_time" content={publishedDate} />
       )}
@@ -87,21 +105,23 @@ export const SEO = ({
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="" />
-      {twitterUsername && (
-        <meta name="twitter:creator" content={`@${twitterUsername}`} />
-      )}
+      {twitter && <meta name="twitter:creator" content={twitter} />}
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
-      <link rel="shortcut icon" href="/favicon.png" />
+      <link rel="shortcut icon" href={faviconUrl} />
       <link rel="canonical" href={seo.url} />
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-134992074-1"
-      />
-      <script>{injectGoogleAnalytics(googleAnalytics)}</script>
+      {googleTagManagerId && googleAnalyticsMeasurementId && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleTagManagerId}`}
+          />
+          <script>{injectGoogleAnalytics(googleAnalyticsMeasurementId)}</script>
+        </>
+      )}
     </Helmet>
   );
 };
