@@ -74,6 +74,7 @@ const Navigation = () => {
       site {
         siteMetadata {
           title
+          siteUrl
           description
           logoUrl
           ctaButtonUrl

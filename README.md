@@ -132,8 +132,24 @@ module.exports = {
 }
 ```
 
-> TODO: Organize components so it's easier to extend data in the `<head>` for e.g.
-> site verification purposes or adding custom scripts.
+### Add additional meta tags
+
+You can shadow this file in order to add more custom meta tags (for example
+site verification tags or other external scripts):
+
+```
+import React from 'react';
+import { Helmet } from 'react-helmet';
+
+export const CustomHead = () => (
+  <Helmet>
+    {/* Replace with whatever you want */}
+  </Helmet>
+);
+```
+
+Your file should be located at:
+`src/@mlent/gatsby-theme-help-center/components/CustomHead.tsx`
 
 ### Content: Categories
 
