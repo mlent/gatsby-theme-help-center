@@ -27,7 +27,7 @@ const Title = styled('div')`
   text-align: center;
   color: ${(p) => p.theme.palette.primary.contrastText};
   font-size: 1.5em;
-  margin-bototm: 0;
+  margin-bottom: 0;
 `;
 
 const Footer = styled('footer')`
