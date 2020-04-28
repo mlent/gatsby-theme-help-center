@@ -24,7 +24,7 @@ const NavBarInner = styled('div')`
   grid-template-areas: 'left center right';
   align-items: center;
   height: 60px;
-  color: #fff;
+  color: ${(p) => p.theme.palette.primary.contrastText};
   transition: 0.7s;
   padding: ${(p) => p.theme.spacing(4)}px ${(p) => p.theme.spacing(4)}px;
 
@@ -162,23 +162,23 @@ const Navigation = () => {
                 variant="outlined"
                 InputLabelProps={{
                   classes: {
-                    focused: css(() => ({
-                      color: 'white !important',
+                    focused: css((t) => ({
+                      color: `${t.palette.primary.contrastText} !important`,
                     })),
-                    root: css(() => ({
-                      color: 'white',
+                    root: css((t) => ({
+                      color: t.palette.primary.contrastText,
                     })),
                   },
                 }}
                 classes={{
-                  root: css(() => ({
+                  root: css((t) => ({
                     input: {
-                      color: 'white',
+                      color: t.palette.primary.contrastText,
                     },
                     fieldset: {
-                      borderColor: 'white',
+                      borderColor: t.palette.primary.contrastText,
                     },
-                    button: { color: 'white' },
+                    button: { color: t.palette.primary.contrastText },
                   })),
                 }}
                 fullWidth

@@ -25,7 +25,7 @@ type Data = {
 
 const Title = styled('div')`
   text-align: center;
-  color: white;
+  color: ${(p) => p.theme.palette.primary.contrastText};
   font-size: 1.5em;
   margin-bototm: 0;
 `;
