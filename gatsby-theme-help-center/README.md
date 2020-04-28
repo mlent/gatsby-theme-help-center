@@ -9,7 +9,7 @@ You can see a demo here: https://gatbsy-theme-help-center.netlify.app
 ## Features
 
 - **Categories** - Incl. images, titles, descriptions
-- **SEO and Sharing metadata** - Rich previews, social markdup, and SEO metadata
+- **SEO and Sharing metadata** - Rich previews, social markup, and SEO metadata
 - **MDX** - For writing the articles
 - **Customization** - Logo, links, colors, and a few terms
 - **Featured articles** - Shown on the home page
@@ -23,6 +23,8 @@ The easiest way to create a new Gatsby site with this theme is to use the [gatsb
 
 ```bash
 gatsby new your-site https://github.com/mlent/gatsby-starter-help-center
+cd your-site
+npm run develop # or yarn develop
 ```
 
 Where `your-site` is the name of the directory you want to create the new site.
@@ -33,11 +35,11 @@ The most up-to-date docs on installing a Gatsby theme can be found [on the Gatsb
 but here's a summary using this theme as an example:
 
 ```bash
-yarn add @mlent/gatsby-theme-help-center
+npm install --save @mlent/gatsby-theme-help-center
 
 # or
 
-npm install --save @mlent/gatsby-theme-help-center
+yarn add @mlent/gatsby-theme-help-center
 ```
 
 Then edit your `gatsby-config.js` file:
@@ -280,3 +282,11 @@ to object representation of listing the plugin.
 Check whether you've set the `basePath` option to something besides `/`.
 
 **Solution:** If, e.g. your `basePath` is `/test` you'll need to work locally at https://localhost:8000/test.
+
+### Plugin has generated no Gatsby nodes
+
+```
+warn The @mlent/gatsby-theme-help-center plugin has generated no Gatsby nodes. Do you need it?
+```
+
+Yeah, I googled a bit about this but I'm not sure how to get rid of this warning. If you're a Gatsby wizz, help a sister out.
