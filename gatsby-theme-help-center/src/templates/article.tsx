@@ -186,7 +186,14 @@ const mdxComponents = {
   code: Code,
 };
 
-export default function ({ data }: { data: PageQueryData }) {
+export default function ({
+  data,
+  pageContext,
+}: {
+  data: PageQueryData;
+  pageContext: { basePath: string };
+}) {
+  const { basePath } = pageContext;
   const {
     mdx,
     site: { siteMetadata },
@@ -210,7 +217,7 @@ export default function ({ data }: { data: PageQueryData }) {
     .map(({ node }: { node: MdxArticle }) => node);
 
   return (
-    <Layout>
+    <Layout basePath={basePath}>
       <SEO
         title={title}
         description={description}

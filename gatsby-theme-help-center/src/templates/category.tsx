@@ -1,12 +1,12 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import { Breadcrumbs, Typography, Card, CardContent } from "@material-ui/core";
-import { Category } from "../types/Category";
-import { MdxArticle } from "../types/Article";
-import { SiteMetadata } from "../types/SiteMetadata";
-import ArticleList from "../components/ArticleList";
-import CategoryLayout from "../layouts/CategoryLayout";
-import { SEO } from "../components/SEO";
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { Breadcrumbs, Typography, Card, CardContent } from '@material-ui/core';
+import { Category } from '../types/Category';
+import { MdxArticle } from '../types/Article';
+import { SiteMetadata } from '../types/SiteMetadata';
+import ArticleList from '../components/ArticleList';
+import CategoryLayout from '../layouts/CategoryLayout';
+import { SEO } from '../components/SEO';
 
 export const query = graphql`
   query($categoryId: String!) {
@@ -43,26 +43,29 @@ export const query = graphql`
   }
 `;
 
-export default function({
-  data
+export default function ({
+  data,
+  pageContext,
 }: {
+  pageContext: { basePath: string };
   data: {
     site: { siteMetadata: SiteMetadata };
     category: Category;
     allMdx: { edges: { node: MdxArticle }[] };
   };
 }) {
+  const { basePath } = pageContext;
   const {
     category,
     site: { siteMetadata },
-    allMdx
+    allMdx,
   } = data;
   const articles = allMdx.edges
-    .filter(edge => edge.node.frontmatter.categories.includes(category.slug))
-    .map(edge => edge.node);
+    .filter((edge) => edge.node.frontmatter.categories.includes(category.slug))
+    .map((edge) => edge.node);
 
   return (
-    <CategoryLayout>
+    <CategoryLayout basePath={basePath}>
       <SEO
         title={category.name}
         description={category.description}

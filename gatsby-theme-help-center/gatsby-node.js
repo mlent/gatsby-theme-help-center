@@ -81,6 +81,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   createPage({
     path: basePath,
     component: require.resolve('./src/home.tsx'),
+    context: {
+      basePath,
+    },
   });
 
   const result = await graphql(`
@@ -124,6 +127,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       component: require.resolve('./src/templates/category.tsx'),
       context: {
         categoryId: id,
+        basePath,
       },
     });
   });
@@ -135,6 +139,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       component: require.resolve('./src/templates/article.tsx'),
       context: {
         articleId: node.id,
+        basePath,
       },
     });
   });

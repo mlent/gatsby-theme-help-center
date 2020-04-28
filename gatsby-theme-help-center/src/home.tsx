@@ -39,7 +39,13 @@ const Footer = styled('footer')`
   }
 `;
 
-export default function () {
+export default function ({
+  pageContext,
+}: {
+  pageContext: { basePath: string };
+}) {
+  const { basePath } = pageContext;
+
   const data: Data = useStaticQuery(graphql`
     query {
       site {
@@ -86,7 +92,7 @@ export default function () {
   ) as MdxArticle[];
 
   return (
-    <Layout styles={{ maxWidth: 950 }}>
+    <Layout basePath={basePath} styles={{ maxWidth: 950 }}>
       <SEO
         title={siteMetadata.title}
         description={siteMetadata.description}

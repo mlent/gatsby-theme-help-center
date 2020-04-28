@@ -68,13 +68,12 @@ interface AutocompleteOption {
   slug: string;
 }
 
-const Navigation = () => {
+const Navigation = ({ basePath }: { basePath: string }) => {
   const data: Data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
-          siteUrl
           description
           logoUrl
           ctaButtonUrl
@@ -104,7 +103,6 @@ const Navigation = () => {
 
   const {
     title,
-    siteUrl,
     logoUrl,
     logoLabel,
     searchText,
@@ -133,7 +131,7 @@ const Navigation = () => {
         <div
           style={{ gridArea: 'left', display: 'flex', alignItems: 'center' }}
         >
-          <Link to={siteUrl} style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to={basePath} style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src={logoUrl}
               height={isMobile ? '20px' : '30px'}

@@ -16,14 +16,16 @@ const Wrapper = styled('div')`
 const Layout = ({
   children,
   styles,
+  basePath,
 }: {
   children: React.ReactNode;
   styles: React.CSSProperties;
+  basePath: string;
 }) => {
   return (
     <>
       <Stripe />
-      <Navigation />
+      <Navigation basePath={basePath} />
       <Wrapper style={styles}>{children}</Wrapper>
     </>
   );
