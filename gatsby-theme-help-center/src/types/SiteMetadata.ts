@@ -1,4 +1,6 @@
 export type SiteMetadata = {
+  htmlLang: string;
+  contentLang: string;
   title: string;
   titleTemplate: string;
   description: string;

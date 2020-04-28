@@ -60,6 +60,10 @@ module.exports = {
     }
   ],
   siteMetadata: {
+    // Language settings
+    htmlLang: 'en',
+    contentLang: 'en-us',
+
     // Fallback title in case a title is not defined for the page
     title: 'Gatsby Help Center Theme',
 

@@ -40,6 +40,8 @@ export const SEO = ({
       site {
         siteMetadata {
           title
+          htmlLang
+          contentLang
           description
           siteUrl
           siteName
@@ -56,6 +58,8 @@ export const SEO = ({
   `);
 
   const {
+    htmlLang,
+    contentLang,
     title: defaultTitle,
     description: defaultDescription,
     siteUrl: defaultUrl,
@@ -83,9 +87,11 @@ export const SEO = ({
       title={seo.title}
       titleTemplate={seo.title !== defaultTitle ? titleTemplate : '%s'}
     >
+      <html lang={htmlLang} />
       <meta charSet="utf-8" />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta httpEquiv="content-language" content={contentLang} />
       <link
         href="https://fonts.googleapis.com/css?family=Lato&display=swap"
         rel="stylesheet"
