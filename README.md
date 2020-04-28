@@ -17,6 +17,16 @@ You can see a demo here: https://gatbsy-theme-help-center.netlify.app
 
 ## Installation
 
+### Using `gatsby new`
+
+The easiest way to create a new Gatsby site with this theme is to use the [gatsby-starter-help-center](https://github.com/mlent/gatsby-starter-help-center) repo:
+
+```bash
+gatsby new https://github.com/mlent/gatsby-starter-help-center
+```
+
+### Manually
+
 The most up-to-date docs on installing a Gatsby theme can be found [on the Gatsby website](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/),
 but here's a summary using this theme as an example:
 
