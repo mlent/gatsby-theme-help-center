@@ -22,8 +22,10 @@ You can see a demo here: https://gatbsy-theme-help-center.netlify.app
 The easiest way to create a new Gatsby site with this theme is to use the [gatsby-starter-help-center](https://github.com/mlent/gatsby-starter-help-center) repo:
 
 ```bash
-gatsby new https://github.com/mlent/gatsby-starter-help-center
+gatsby new your-site https://github.com/mlent/gatsby-starter-help-center
 ```
+
+Where `your-site` is the name of the directory you want to create the new site.
 
 ### Manually
 
