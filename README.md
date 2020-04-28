@@ -141,7 +141,7 @@ module.exports = {
 You can shadow this file in order to add more custom meta tags (for example
 site verification tags or other external scripts):
 
-```
+```javascript
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -181,7 +181,7 @@ The illustrations from the sample site are from [Undraw](https://undraw.co/illus
 
 Create new articles by creating mdx files in `src/data/pages` and providing the following frontmatter:
 
-```
+```markdown
 ---
 title: Example Article No. 2
 description: Example description that will go in the SEO description
@@ -205,7 +205,7 @@ You may associate articles with more than one category and it will appear in bot
 
 Edit or create a file at `src/@mlent/gatsby-theme-help-center/themes/colors.ts` to customize colors:
 
-```
+```javascript
 export const COLORS = {
   // This is used for the header stripe
   primary: {
@@ -254,7 +254,7 @@ If you like these colors and want some alternatives, you can find them on https:
 
 If you want to run this repo locally after cloning:
 
-```
+```bash
 yarn
 yarn workspace site develop # To run the demo site
 yarn workspace @mlent/gatsby-theme-help-center # To run the theme itself
