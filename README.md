@@ -181,6 +181,65 @@ Hello fellow kids, this is another article.
 
 You may associate articles with more than one category and it will appear in both sections.
 
+### Look and feel: Colors
+
+Edit or create a file at `src/@mlent/gatsby-theme-help-center/themes/colors.ts` to customize colors:
+
+```
+export const COLORS = {
+  // This is used for the header stripe
+  primary: {
+    light: '#63ccff',
+    main: '#4285f4',
+    dark: '#006db3',
+    contrastText: 'white',
+  },
+  secondary: {
+    light: '#ff8cb3',
+    dark: '#c51162',
+    main: '#f50057',
+    contrastText: 'white',
+  },
+  success: {
+    light: '#ADE488',
+    dark: '#237804',
+    main: '#52c41a',
+    contrastText: 'white',
+  },
+  pending: {
+    light: '#F5E18C',
+    dark: '#F6CC1B',
+    main: '#F6CC1B',
+    contrastText: 'white',
+  },
+  error: {
+    light: '#F7CACA',
+    dark: '#DB4D4D',
+    main: '#DB4D4D',
+    contrastText: 'white',
+  },
+};
+
+```
+
+`COLORS.primary` is used for the hero stripe and the colors of links. Just be sure to edit the `contrastText` so your
+text has enough contrast to be legible depending on the primary colors you choose.
+
+> **NOTE:** The other colors aren't used as part of the theme, but you're encouraged to use them
+> for any custom components you end up developing.
+
+If you like these colors and want some alternatives, you can find them on https://ant.design/docs/spec/colors
+
+## Development
+
+If you want to run this repo locally after cloning:
+
+```
+yarn
+yarn workspace site develop # To run the demo site
+yarn workspace @mlent/gatsby-theme-help-center # To run the theme itself
+```
+
 ## Troubleshooting
 
 ## Issues
