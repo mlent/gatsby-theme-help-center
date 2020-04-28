@@ -258,4 +258,23 @@ yarn workspace @mlent/gatsby-theme-help-center # To run the theme itself
 
 ## Troubleshooting
 
-## Issues
+### Failed to compile
+
+```
+Failed to compile
+There was an error in your GraphQL query:
+
+Cannot query field "contentLang" on type "SiteSiteMetadata".
+```
+
+This error can happen if you edit your `gatsby-config.js` file,
+for instance adjusting the `basePath` option or switching from string
+to object representation of listing the plugin.
+
+**Solution:** Restart the development server.
+
+### Index page is missing
+
+Check whether you've set the `basePath` option to something besides `/`.
+
+**Solution:** If, e.g. your `basePath` is `/test` you'll need to work locally at https://localhost:8000/test.
