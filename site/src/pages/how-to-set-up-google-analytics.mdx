@@ -43,7 +43,7 @@ You will get a snippet from Google called the "Global Site Tag (gtag.js)", which
 
 <img src="/images/tutorials/install-google-analytics/step-4.png" alt="Navigate to Admin section on Google Analytics" style="width: 100%"/>
 
-```
+```html
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164700569-1"></script>
 <script>
@@ -58,19 +58,19 @@ These IDs may be the same, or they may be different (for instance when you track
 
 The value after `?id=` is the `googleTagManagerId`:
 
-```
+```html
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TAG_MANAGER_ID_HERE"></script>
 ```
 
 And the ID being passed as the gtag config is the `googleAnalyticsMeasurementId`:
 
-```
+```javascript
 gtag('config', 'YOUR_GTAG_CONFIGURATION_ID_HERE');
 ```
 
 Once you've found these IDs, provide them in your `gatsby-config.js` file:
 
-```
+```javascript
 module.exports = {
   plugins: [
     {
