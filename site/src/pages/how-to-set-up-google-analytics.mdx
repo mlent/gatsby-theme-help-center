@@ -2,11 +2,11 @@
 title: How to set up Google Analytics for this theme
 description: How to find the two pieces of data you need to enable Google Analytics for this theme
 author: Monica
-categories: ["tutorials"]
+categories: ['tutorials']
 date: 2020-03-15
 featured: true
 tags: []
-relatedArticles: ["how-to-install-gatsby-theme-helpsy"]
+relatedArticles: ['how-to-install-gatsby-theme-helpsy']
 ---
 
 > **A brief note on GDPR**<br/><br/>
@@ -26,9 +26,9 @@ Navigate to <a href="https://analytics.google.com/" target="_blank" rel="noopene
 and click the "Admin" button in the left navigation menu.
 
 <img
-  src='/images/tutorials/install-google-analytics/step-1.png'
-  alt='Navigate to Admin section on Google Analytics'
-  style='width: 100%'
+  src="/images/tutorials/install-google-analytics/step-1.png"
+  alt="Navigate to Admin section on Google Analytics"
+  style="width: 100%"
 />
 
 ## Step 2. Create a new Account or Property
@@ -39,14 +39,14 @@ connected to an existing product.
 In that case, choose "Create Property". Otherwise, choose "Create Account".
 
 <img
-  src='/images/tutorials/install-google-analytics/step-2.png'
-  alt='Navigate to Admin section on Google Analytics'
-  style='width: 100%'
+  src="/images/tutorials/install-google-analytics/step-2.png"
+  alt="Navigate to Admin section on Google Analytics"
+  style="width: 100%"
 />
 <img
-  src='/images/tutorials/install-google-analytics/step-3.png'
-  alt='Navigate to Admin section on Google Analytics'
-  style='width: 100%'
+  src="/images/tutorials/install-google-analytics/step-3.png"
+  alt="Navigate to Admin section on Google Analytics"
+  style="width: 100%"
 />
 
 ## Step 3. Copy the Tracking IDs into your gatsby-config
@@ -54,9 +54,9 @@ In that case, choose "Create Property". Otherwise, choose "Create Account".
 You will get a snippet from Google called the "Global Site Tag (gtag.js)", which looks something like this:
 
 <img
-  src='/images/tutorials/install-google-analytics/step-4.png'
-  alt='Navigate to Admin section on Google Analytics'
-  style='width: 100%'
+  src="/images/tutorials/install-google-analytics/step-4.png"
+  alt="Navigate to Admin section on Google Analytics"
+  style="width: 100%"
 />
 
 ```html
@@ -70,9 +70,9 @@ You will get a snippet from Google called the "Global Site Tag (gtag.js)", which
   function gtag() {
     dataLayer.push(arguments);
   }
-  gtag("js", new Date());
+  gtag('js', new Date());
 
-  gtag("config", "UA-164700569-3");
+  gtag('config', 'UA-164700569-3');
 </script>
 ```
 
@@ -90,7 +90,7 @@ The value after `?id=` is the `googleTagManagerId`:
 And the ID being passed as the gtag config is the `googleAnalyticsMeasurementId`:
 
 ```js
-gtag("config", "YOUR_GTAG_CONFIGURATION_ID_HERE");
+gtag('config', 'YOUR_GTAG_CONFIGURATION_ID_HERE');
 ```
 
 Once you've found these IDs, provide them in your `gatsby-config.js` file:
@@ -99,24 +99,24 @@ Once you've found these IDs, provide them in your `gatsby-config.js` file:
 module.exports = {
   plugins: [
     {
-      resolve: "@mlent/gatsby-theme-help-center",
+      resolve: '@mlent/gatsby-theme-help-center',
       options: {
-        basePath: "/",
-      },
-    },
+        basePath: '/'
+      }
+    }
   ],
   siteMetadata: {
     // ...your other configurations here
-    googleTagManagerId: "YOUR_TAG_MANAGER_ID_HERE",
-    googleAnalyticsMeasurementId: "YOUR_GTAG_CONFIGURATION_ID_HERE",
-  },
+    googleTagManagerId: 'YOUR_TAG_MANAGER_ID_HERE',
+    googleAnalyticsMeasurementId: 'YOUR_GTAG_CONFIGURATION_ID_HERE'
+  }
 };
 ```
 
 Once you've successfully set up Google Analytics, you will see the page change to saying "1 active users right now" as seen in the screenshot below.
 
 <img
-  src='/images/tutorials/install-google-analytics/step-4.png'
-  alt='Navigate to Admin section on Google Analytics'
-  style='width: 100%'
+  src="/images/tutorials/install-google-analytics/step-4.png"
+  alt="Navigate to Admin section on Google Analytics"
+  style="width: 100%"
 />

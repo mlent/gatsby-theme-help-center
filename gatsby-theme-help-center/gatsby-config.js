@@ -22,33 +22,33 @@ module.exports = {
     footerText: 'Back to main website',
     footerUrl: 'https://monicalent.com',
     googleTagManagerId: '',
-    googleAnalyticsMeasurementId: '',
+    googleAnalyticsMeasurementId: ''
   },
   plugins: [
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-mdx',
-      options: { gatsbyRemarkPlugins: [{ resolve: `gatsby-remark-shiki` }] },
+      options: { gatsbyRemarkPlugins: [{ resolve: `gatsby-remark-shiki` }] }
     },
     {
       resolve: 'gatsby-source-filesystem',
-      options: { path: 'src/data' },
+      options: { path: 'src/data' }
     },
     {
       resolve: 'gatsby-source-filesystem',
-      options: { path: 'src/pages' },
+      options: { path: 'src/pages' }
     },
     {
       resolve: 'gatsby-transformer-yaml',
-      options: { typeName: 'Category', path: 'src/data/categeories' },
+      options: { typeName: 'Category', path: 'src/data/categeories' }
     },
     {
       resolve: 'gatsby-plugin-material-ui',
       options: {
-        stylesProvider: { injectFirst: true },
-      },
+        stylesProvider: { injectFirst: true }
+      }
     },
     'gatsby-plugin-emotion',
-    'gatsby-plugin-react-helmet',
-  ],
+    'gatsby-plugin-react-helmet'
+  ]
 };
