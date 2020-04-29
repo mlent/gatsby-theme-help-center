@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     htmlLang: 'en',
-    contenLang: 'en-us',
+    contentLang: 'en-us',
     title: 'Gatsby Help Center Theme',
     titleTemplate: '%s · Gatsby Help Center Theme',
     description: 'A help center theme for Gatsby.',
@@ -22,7 +22,7 @@ module.exports = {
     footerText: 'Back to main website',
     footerUrl: 'https://monicalent.com',
     googleTagManagerId: 'UA-164700569-1',
-    googleAnalyticsMeasurementId: 'UA-164700569-1',
+    googleAnalyticsMeasurementId: 'UA-164700569-1'
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -30,7 +30,8 @@ module.exports = {
       resolve: '@mlent/gatsby-theme-help-center',
       options: {
         basePath: '/',
-      },
-    },
-  ],
+        shikiTheme: 'nord'
+      }
+    }
+  ]
 };
