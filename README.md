@@ -50,7 +50,10 @@ module.exports = {
     {
       resolve: '@mlent/gatsby-theme-help-center',
       options: {
-        basePath: '/'
+        basePath: '/',
+        // Configure a syntax highlighting theme for fenced code blocks
+        // Full list here https://github.com/octref/shiki/tree/master/packages/themes
+        shikiTheme: 'nord'
       }
     }
   ]
@@ -102,7 +105,7 @@ module.exports = {
     // Placeholder for search input field
     searchText: 'Search',
 
-    // Your favicon 
+    // Your favicon
     faviconUrl: '/images/favicon.png',
 
     // Image to be used when sharing articles on social media
@@ -131,9 +134,9 @@ module.exports = {
 
     // Google Analytics setup (Optional)
     googleTagManagerId: '',
-    googleAnalyticsMeasurementId: '',
+    googleAnalyticsMeasurementId: ''
   }
-}
+};
 ```
 
 ### Add additional meta tags
