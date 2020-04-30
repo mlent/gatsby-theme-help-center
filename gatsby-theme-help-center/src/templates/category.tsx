@@ -45,7 +45,7 @@ export const query = graphql`
 
 export default function ({
   data,
-  pageContext
+  pageContext,
 }: {
   pageContext: { basePath: string };
   data: {
@@ -58,7 +58,7 @@ export default function ({
   const {
     category,
     site: { siteMetadata },
-    allMdx
+    allMdx,
   } = data;
   const articles = allMdx.edges
     .filter((edge) => edge.node.frontmatter.categories.includes(category.slug))
