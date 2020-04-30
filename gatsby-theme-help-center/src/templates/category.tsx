@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import { Breadcrumbs, Typography, Card, CardContent } from '@material-ui/core';
-import { Category } from '../types/Category';
-import { MdxArticle } from '../types/Article';
-import { SiteMetadata } from '../types/SiteMetadata';
-import ArticleList from '../components/ArticleList';
-import CategoryLayout from '../layouts/CategoryLayout';
-import { SEO } from '../components/SEO';
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { Breadcrumbs, Typography, Card, CardContent } from "@material-ui/core";
+import { Category } from "../types/Category";
+import { MdxArticle } from "../types/Article";
+import { SiteMetadata } from "../types/SiteMetadata";
+import ArticleList from "../components/ArticleList";
+import CategoryLayout from "../layouts/CategoryLayout";
+import { SEO } from "../components/SEO";
 
 export const query = graphql`
   query($categoryId: String!) {
@@ -24,7 +24,7 @@ export const query = graphql`
         description
       }
     }
-    allMdx {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
@@ -75,12 +75,12 @@ export default function ({
       <div>
         <Card>
           <CardContent>
-            <Breadcrumbs aria-label="Navigation">
-              <Link to="/">Home</Link>
-              <Typography color="textPrimary">{category.name}</Typography>
+            <Breadcrumbs aria-label='Navigation'>
+              <Link to='/'>Home</Link>
+              <Typography color='textPrimary'>{category.name}</Typography>
             </Breadcrumbs>
             <h1>{category.name}</h1>
-            <Typography variant="body1" component="p" paragraph>
+            <Typography variant='body1' component='p' paragraph>
               {category.description}
             </Typography>
             <ArticleList articles={articles} />
