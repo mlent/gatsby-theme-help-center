@@ -25,7 +25,7 @@ export const SEO = ({
   siteUrl,
   pathname,
   isArticle = false,
-  publishedDate,
+  publishedDate
 }: {
   title?: string;
   description?: string;
@@ -71,7 +71,7 @@ export const SEO = ({
     googleTagManagerId,
     googleAnalyticsMeasurementId,
     twitter,
-    siteName,
+    siteName
   } = data.site.siteMetadata;
 
   const img = socialSharingImage || image || defaultSocialSharingImageUrl;
@@ -80,7 +80,7 @@ export const SEO = ({
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${img}`,
-    url: `${siteUrl || defaultUrl}${pathname || '/'}`,
+    url: `${siteUrl || defaultUrl}${pathname || ''}/`
   };
 
   return (
@@ -100,6 +100,7 @@ export const SEO = ({
         />
         <meta property="og:site_name" content={siteName} />
         {seo.url && <meta property="og:url" content={seo.url} />}
+        {seo.url && <link rel="canonical" href={seo.url} />}
         {isArticle && <meta property="og:type" content="article" />}
         {isArticle && <meta property="article:author" content={facebookUrl} />}
         {isArticle && (
