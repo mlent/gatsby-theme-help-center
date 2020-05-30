@@ -9,9 +9,10 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
+    "@mlent/gatsby-theme-help-center": "*",
     "gatsby": "^2.17.7",
     "gatsby-plugin-typescript": "^2.1.15",
-    "@mlent/gatsby-theme-help-center": "*",
+    "gatsby-remark-shiki": "^0.1.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-feather": "^2.0.3"
