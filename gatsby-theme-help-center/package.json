@@ -36,6 +36,7 @@
     "gatsby-plugin-mdx": "^1.0.55",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-typescript": "^2.1.15",
+    "gatsby-remark-shiki": "^0.1.2",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-yaml": "^2.2.15",
     "react-feather": "^2.0.3",
