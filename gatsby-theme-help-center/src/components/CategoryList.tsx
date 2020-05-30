@@ -50,7 +50,7 @@ const CategoryList: React.FC<{ categories: Category[] }> = ({ categories }) => (
     {categories.map((category) => (
       <Card key={category.slug}>
         <StyledCardContent>
-          <Link to={`${category.url}/`}>
+          <Link to={category.url}>
             <Img
               src={category.image}
               title={category.name}
@@ -58,7 +58,7 @@ const CategoryList: React.FC<{ categories: Category[] }> = ({ categories }) => (
             />
           </Link>
           <Typography variant="h5" component="h2" paragraph>
-            <Link to={`${category.url}/`}>{category.name}</Link>
+            <Link to={category.url}>{category.name}</Link>
           </Typography>
           <Typography variant="body1" component="p">
             {category.description}

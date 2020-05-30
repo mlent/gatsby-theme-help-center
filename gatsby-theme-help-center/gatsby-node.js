@@ -3,15 +3,15 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 const DEFAULT_OPTIONS = {
-  basePath: '/',
+  basePath: '/'
 };
 
 // Enable resolving imports for mdx
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    },
+      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    }
   });
 };
 
@@ -21,7 +21,7 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 
   const contentPaths = [
     path.join(program.directory, 'src/data/categories'),
-    path.join(program.directory, 'src/pages'),
+    path.join(program.directory, 'src/pages')
   ];
 
   contentPaths.forEach((dir) => {
@@ -42,7 +42,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: 'slug',
       node,
-      value: articleSlug,
+      value: articleSlug
     });
   }
 };
@@ -67,9 +67,9 @@ exports.createResolvers = ({ createResolvers }, options) => {
   createResolvers({
     Category: {
       url: {
-        resolve: (source) => `${basePath}categories/${source.slug}`,
-      },
-    },
+        resolve: (source) => `${basePath}categories/${source.slug}/`
+      }
+    }
   });
 };
 
@@ -82,8 +82,8 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     path: basePath,
     component: require.resolve('./src/home.tsx'),
     context: {
-      basePath,
-    },
+      basePath
+    }
   });
 
   const result = await graphql(`
@@ -123,12 +123,12 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     const { id, slug } = category;
 
     createPage({
-      path: `${basePath}categories/${slug}`,
+      path: `${basePath}categories/${slug}/`,
       component: require.resolve('./src/templates/category.tsx'),
       context: {
         categoryId: id,
-        basePath,
-      },
+        basePath
+      }
     });
   });
 
@@ -139,8 +139,8 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       component: require.resolve('./src/templates/article.tsx'),
       context: {
         articleId: node.id,
-        basePath,
-      },
+        basePath
+      }
     });
   });
 };
