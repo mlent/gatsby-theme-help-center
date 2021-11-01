@@ -52,8 +52,8 @@ module.exports = {
       options: {
         basePath: '/',
         // Configure a syntax highlighting theme for fenced code blocks
-        // Full list here https://github.com/octref/shiki/tree/master/packages/themes
-        shikiTheme: 'nord'
+        // Full theme list here https://www.gatsbyjs.com/plugins/gatsby-remark-highlight-code/
+        codeTheme: 'dracula'
       }
     }
   ]
