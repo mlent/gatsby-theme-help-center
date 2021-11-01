@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
 import { COLORS } from './colors';
 
-let theme = createMuiTheme({
+let theme = createTheme({
   typography: {
     fontFamily: 'Lato, sans-serif',
     h5: {

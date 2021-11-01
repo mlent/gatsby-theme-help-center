@@ -8,38 +8,30 @@
     "develop": "gatsby develop"
   },
   "peerDependencies": {
-    "gatsby": "^2.17.7",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "typescript": "^3.6.4"
+    "gatsby": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.4"
   },
-  "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.3",
-    "@types/react-helmet": "^5.0.14",
-    "gatsby": "^2.17.7",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "typescript": "^3.6.4"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "@material-ui/core": "^4.5.2",
-    "@material-ui/lab": "^4.0.0-alpha.33",
-    "@mdx-js/mdx": "^1.5.1",
-    "@mdx-js/react": "^1.5.1",
-    "emotion": "^10.0.23",
-    "emotion-theming": "^10.0.19",
-    "gatsby-plugin-emotion": "^4.1.13",
-    "gatsby-plugin-material-ui": "^2.1.6",
-    "gatsby-plugin-mdx": "^1.0.55",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-typescript": "^2.1.15",
-    "gatsby-remark-shiki": "^0.1.2",
-    "gatsby-source-filesystem": "^2.1.35",
-    "gatsby-transformer-yaml": "^2.2.15",
-    "react-feather": "^2.0.3",
-    "react-helmet": "^5.2.1"
+    "@deckdeckgo/highlight-code": "^3.4.1",
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/lab": "4.0.0-alpha.60",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby-plugin-emotion": "^7.0.0",
+    "gatsby-plugin-material-ui": "^4.0.3",
+    "gatsby-plugin-mdx": "^3.0.0",
+    "gatsby-plugin-react-helmet": "^5.0.0",
+    "gatsby-plugin-typescript": "^4.0.0",
+    "gatsby-remark-highlight-code": "^3.0.1",
+    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-transformer-yaml": "^4.0.0",
+    "react-feather": "^2.0.9",
+    "react-helmet": "^6.1.0"
   }
 }

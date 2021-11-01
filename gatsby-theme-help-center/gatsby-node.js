@@ -47,7 +47,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.sourceNodes = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type Category implements Node @dontInfer {
       id: ID!

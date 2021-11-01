@@ -32,11 +32,11 @@ module.exports = function (themeOptions) {
         options: {
           gatsbyRemarkPlugins: [
             {
-              resolve: `gatsby-remark-shiki`,
+              resolve: `gatsby-remark-highlight-code`,
               options: {
-                theme: themeOptions.shikiTheme
-                  ? themeOptions.shikiTheme
-                  : 'nord'
+                theme: themeOptions.codeTheme
+                  ? themeOptions.codeTheme
+                  : 'dracula'
               }
             }
           ]
@@ -54,12 +54,7 @@ module.exports = function (themeOptions) {
         resolve: 'gatsby-transformer-yaml',
         options: { typeName: 'Category', path: 'src/data/categeories' }
       },
-      {
-        resolve: 'gatsby-plugin-material-ui',
-        options: {
-          stylesProvider: { injectFirst: true }
-        }
-      },
+      'gatsby-plugin-material-ui',
       'gatsby-plugin-emotion',
       'gatsby-plugin-react-helmet'
     ]

@@ -183,7 +183,7 @@ const mdxComponents = {
   h1: H1,
   h2: H2,
   h3: H3,
-  code: Code,
+  // code: Code
 };
 
 export default function ({
