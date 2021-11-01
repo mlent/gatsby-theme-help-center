@@ -48,6 +48,7 @@ function withRoot(Component: any) {
     render() {
       return (
         <StylesProvider
+          injectFirst
           generateClassName={this.muiPageContext.generateClassName}
         >
           {/* MuiThemeProvider makes the theme available down the React
