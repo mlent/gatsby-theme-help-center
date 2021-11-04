@@ -30,7 +30,7 @@ module.exports = {
       resolve: '@mlent/gatsby-theme-help-center',
       options: {
         basePath: '/',
-        shikiTheme: 'nord'
+        codeTheme: 'dracula'
       }
     }
   ]

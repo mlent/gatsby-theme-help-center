@@ -1,4 +1,4 @@
-import { css as original, Interpolation } from "emotion";
+import { css as original, Interpolation } from "@emotion/css";
 import styled, { CreateStyled } from "@emotion/styled";
 import { COMBINED_THEME, CombinedTheme } from "./themes";
 

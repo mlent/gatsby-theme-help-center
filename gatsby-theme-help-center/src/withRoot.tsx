@@ -1,7 +1,6 @@
 import React from "react";
 import { MuiThemeProvider } from "@material-ui/core/styles";
-import { Global, css } from "@emotion/core";
-import { ThemeProvider } from "emotion-theming";
+import { Global, css, ThemeProvider } from "@emotion/react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { StylesProvider } from "@material-ui/styles";
 // @ts-ignore
@@ -49,6 +48,7 @@ function withRoot(Component: any) {
     render() {
       return (
         <StylesProvider
+          injectFirst
           generateClassName={this.muiPageContext.generateClassName}
         >
           {/* MuiThemeProvider makes the theme available down the React
